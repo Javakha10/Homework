@@ -41,15 +41,23 @@ class car {
   };
 
   accelerate = () => {
-    console.log(0 + this.speed);
+    return console.log(this.speed);
   };
 
   break = () => {};
+
+  emergency_brake = () => {};
+
+  status = () => {
+    return console.log(
+      `The car ${this.brand} ${this.model} is moving at ${this.speed} km/h`
+    );
+  };
 }
 
 const car1 = new car("Ford", "Mustang", 80, "The car is not moving");
 
-car1.accelerate();
+car1.status();
 
 // TASK 4
 const a = 30;
