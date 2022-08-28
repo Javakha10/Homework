@@ -25,32 +25,40 @@ console.log(sumOfSameStrings);
 // TASK 3
 
 class car {
-  constructor(brand, model, speed = 0, motion = "The car is not moving") {
+  constructor(brand, model) {
     this.brand = brand;
     this.model = model;
-    this.speed = speed;
-    this.motion = motion;
+    this.speed = 0;
+    this.motion = "The car is not moving";
   }
 
   check_motion = () => {
     if (this.speed === 0) {
-      console.log("The car is not moving");
+      ("The car is not moving");
     } else {
-      console.log("The car is moving");
+      ("The car is moving");
     }
   };
 
-  accelerate = () => {
-    return console.log(this.speed);
+  accelerate = (speed) => {
+    this.speed += speed;
   };
 
-  break = () => {};
+  break = (speed) => {
+    if (speed > this.speed) {
+      this.speed = 0;
+    } else {
+      speed -= this.speed;
+    }
+  };
 
-  emergency_brake = () => {};
+  emergency_brake = () => {
+    this.speed = 0;
+  };
 
   status = () => {
     return console.log(
-      `The car ${this.brand} ${this.model} is moving at ${this.speed} km/h`
+      `The car ${this.brand} ${this.model} is moving at ${speed} km/h`
     );
   };
 }
